@@ -1,27 +1,37 @@
-function button1Function() {
-  var canvas = document.getElementById("myCanvas");
-  var ctx = canvas.getContext("2d");
-  ctx.fillStyle = "#FF0000";
-  ctx.fillRect(0, 0, 150, 75);
-  ctx.fillStyle = "#00FF00";
+document.addEventListener("DOMContentLoaded", domloaded, false);
 
-  ctx.fillRect(0, 0, 10, 10);
+let context;
 
-  ctx.fillRect(20, 20, 10, 10);
-}
-function button2Function(){
-  var canvas= document.getElementById("myCanvas");
-  var ctx = canvas.getContext("2d");
-  ctx.fillstyle="#00FF00";
-  for (let index=0;index=140;index=+20){
-  ctxfillRect(index,index,10,10)
+function domloaded() {
+
+  context = document.getElementById("canvas").getContext("2d");
+  context.fillStyle = "#ff0000";
+  
+  let x = 0;
+  let y = 0;
+  let index = 400;
+
+  while (index > 0) {
+    
+    index -= 20;
+    for (let i = 0; i < index; i += 20) {
+      context.fillRect(x,y,20,20);
+      x += 20;
+    }
+    index -= 20;
+    for (let i = 0; i < index; i += 20) {
+      context.fillRect(x,y,20,20);
+      y += 20;
+    }
+    index -= 20;
+    for (let i = 0; i < index; i += 20) {
+      context.fillRect(x,y,20,20);
+      x -= 20;
+    }
+    index -= 20;
+    for (let i = 0; i < index; i += 20) {
+      context.fillRect(x,y,20,20);
+      y -= 20;
+    }
   }
-  for (let index=140;index=0;index=-20){
-   let z=140;
-   ctxfillRect(index,z-index,10,10)
-}
-
-
-  
-  
 }
